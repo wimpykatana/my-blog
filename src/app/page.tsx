@@ -1,29 +1,36 @@
 import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
-import { getAllPosts } from "@/lib/api";
+import { Pharalax } from "@/app/_components/pharalax";
+import { About  } from "@/app/_components/about";
+import { SocialMedia } from "@/app/_components/social-media";
+import { ContactMe } from "@/app/_components/contact-me";
 
 export default function Index() {
-  const allPosts = getAllPosts();
-
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
 
   return (
     <main>
       <Container>
         <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
+        <Pharalax
+          id={"bg-pharalax-1"}
+          subtitle={"Hi, my name is"}
+          mainTitle={"John Doe"}
+          belowTitle={"An Awesome Developer, who loves to code and write blogs"}
+          minHeight={false}
         />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <About />
+        <Pharalax
+          id={"bg-pharalax-3"}
+          minHeight={true}
+          component={<SocialMedia />}
+        />
+        <ContactMe />
+        <Pharalax
+          id={"bg-pharalax-1"}
+          mainTitle={"Good Bye,"}
+          belowTitle={"Have a nice day !!"}
+          minHeight={false}
+        />
       </Container>
     </main>
   );

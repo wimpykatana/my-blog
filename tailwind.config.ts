@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
+        "pharalax-1": "url('/img/bg01.jpg')",
+        "pharalax-2": "url('/img/bg02.jpg')",
+        "pharalax-3": "url('/img/bg03.jpg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
